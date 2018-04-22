@@ -1,14 +1,13 @@
 
   // See <http://truffleframework.com/docs/advanced/configuration>
   // to customize your Truffle configuration!
- 
-module.exports = {
+ var HDWalletProvider = require("truffle-hdwallet-provider");
+ var mnemonic = "orange apple banana ";
+ module.exports = {
     networks: {
-        development: {
-            host: "localhost",
-            port: 7545,
-            network_id: "*" // Match any network id
-        }
+      development: {
+        provider: new HDWalletProvider(mnemonic, "https://kovan.infura.io/RqyGxlhDAe3zgif9Re1B np"),
+        network_id: '*',
+      }
     }
-};
-
+  };
